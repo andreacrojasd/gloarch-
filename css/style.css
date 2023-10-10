@@ -1,0 +1,512 @@
+
+
+body {
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  text-align: justify center;
+	font-family: "area-extended", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+
+}
+
+*{
+  font-size: 10px;
+
+}
+
+#backgroundvideo{
+	z-index: -6;
+}
+
+
+
+#cube {
+	z-index: 3;
+  transform-style: preserve-3d;
+  width: 20em;
+  height: 20em;
+  transition: 0.4s;
+  transform-origin: 7.5em 7.5em;
+  position: absolute;
+	left: -10px;
+	
+  animation: rotateCube 20s linear infinite;
+}
+
+
+.face {
+  background: linear-gradient(
+    0deg, rgb(66, 206, 245), rgba(166, 202, 2, 0.5)
+  );
+  width: 20em;
+  height: 20em;
+  transition: 0.4s;
+  position: absolute;
+  overflow: hidden;
+  animation: color 10s linear infinite;
+}
+
+.face1 {
+  transform: rotateX(90deg) translate3d(0, 7.5em, 0);
+  transform-origin: bottom;
+}
+
+.face2 {
+  transform: translate3d(0, 0, .5em);
+}
+
+.face3 {
+  transform: rotateY(90deg) translate3d(-8.5em, 0, 0);
+  transform-origin: left;
+}
+
+.face4 {
+  transform: rotateX(-90deg) translate3d(0, -9.5em, 0);
+  transform-origin: top;
+}
+
+.face5 {
+  transform: rotateY(-90deg) translate3d(7.5em, 0, 0);
+  transform-origin: right;
+}
+
+.face6 {
+  transform: translate3d(0, 0, -7.5em);
+}
+
+@keyframes rotateCube {
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes color {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+/* Video background container */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Content on top of the video background */
+.content {
+  position: absolute;
+  
+  
+}
+
+
+
+
+
+.titlecontainer {
+  position: relative;
+  top: -25px;
+  left: 1360px;
+	z-index: 2;
+	margin-top: 50px; }
+
+.title {
+  opacity: 70%;
+  font-family: 'Dela Gothic One', cursive;
+    background: rgb(39, 39, 39);
+    background: linear-gradient(
+        to right, #0bd2e9, #ff6b08, #cf23cf, #1ce87b
+    );
+    font-size: 38px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    transition: all 0.5s;
+    
+
+
+}
+
+#title::after{
+  font-family: 'Dela Gothic One', cursive;
+            font-size: 38px;
+            text-align: center;
+            transition: color 0.05s linear;
+            position: relative;
+  
+
+  
+}
+
+
+.hidden-paragraph {
+  
+  font-family: "area-extended", sans-serif;
+font-weight: 400;
+font-style: normal;
+position: absolute;
+left: -400px;
+max-width: 600px;
+text-align: left;
+    display: none;
+    font-size: 13.5px;
+    background: linear-gradient(
+        to right, #d0f610, #29fa9f, #12caef, #f23040
+    );
+    border-radius: 5px;
+    padding: 15px 30px 30px 30px ;
+    animation: color 10s linear infinite;
+    transition: all 1s ease-out;
+
+}
+
+.hidden-paragraph .p{
+
+  
+opacity: 1;
+
+}
+
+.title:hover + .hidden-paragraph {
+  transition: all 1s ease-out;
+    display: block;
+    opacity: 70%;
+    
+
+	
+}
+
+
+
+
+
+.face {
+    background: linear-gradient(0deg, rgb(66, 206, 245), rgba(166, 202, 2, 0.5));
+    width: 30em;
+    height: 30em;
+    transition: 0.4s;
+    position: absolute;
+    overflow: hidden;
+}
+
+.face1 {
+    transform: rotateX(90deg) translate3d(0, 7.5em, 0);
+    transform-origin: bottom;
+}
+
+.face2 {
+    transform: translate3d(0, 0, .5em);
+}
+
+.face3 {
+    transform: rotateY(90deg) translate3d(-8.5em, 0, 0);
+    transform-origin: left;
+}
+
+.face4 {
+    transform: rotateX(-90deg) translate3d(0, -9.5em, 0);
+    transform-origin: top;
+}
+
+.face5 {
+    transform: rotateY(-90deg) translate3d(7.5em, 0, 0);
+    transform-origin: right;
+}
+
+.face6 {
+    transform: translate3d(0, 0, -7.5em);
+}
+
+.cube-text h2{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 3px;
+}
+
+.cube-text p{
+  font-size: 30px;
+  margin: auto;
+  width: 640px; 
+  padding: 50px;
+}
+
+.cube-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -ms-text-justify: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: "area-normal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#cube:hover .cube-text {
+    opacity: 1;
+}
+
+@keyframes rotateCube {
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes color {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#cube2position{
+	z-index: 10;
+	position: absolute;
+	left: 1300px;
+	top: 540px;
+	
+}
+
+
+.cube2-container .cube2-face{
+	
+	opacity:70%; 
+	width: 300px;
+	height:300px;
+	position: absolute;
+	font-size: 15px;
+	background: #538BFF;
+	 color:black;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.cube2-container{
+	 perspective: 750px;
+	 
+}
+
+.cube2-container:hover{
+  perspective: 10px;
+  
+}
+
+.cube2-container .cube2{
+	width: 300px;
+	height:300px;
+	transform-style: preserve-3d;
+	max-width: 30px;
+	
+	
+	
+}
+
+.cube2-container .front{
+	background: #F28A38;
+	transform: translateZ(150px)
+	 
+}
+
+.cube2-container .front .h2{
+	background: linear-gradient(
+        to right, #0bd2e9, #ff6b08, #cf23cf, #1ce87b
+    );
+	 
+}
+
+.cube2-container .back{
+	font-size: 12px;
+	background:#69E265;
+	transform: rotateY(180deg) translateZ(150px);
+	 
+}
+
+.cube2-container .back .p{
+  max-width: 300px;
+}
+
+.cube2-container .left{
+	font-size: 12px;
+	background: #FFC0CB;
+	transform: rotateY(-90deg) translateZ(150px);
+	 
+}
+
+
+.cube2-container .right{
+	font-size: 12px;
+	background: #5F71F8;
+	transform: rotateY(90deg) translateZ(150px);
+	 
+}
+
+ .cube2-container .top{
+	 font-size: 12px;
+	background: #808080;
+	 transform: rotateX(90deg)translateZ(150px);
+		 
+}
+
+.cube2-container .bottom{
+	font-size: 12px;
+	background:  #F7ED87;
+	transform: rotateX(-90deg)translateZ(150px);
+	
+	 
+}
+
+
+.containercard1{
+	position:absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px;
+	flex-wrap: wrap;
+	z-index: 30;
+  
+	
+}
+
+.containercard .card .h1{
+  transform: rotate(-90deg);
+   
+}
+
+.containercard .card{
+  
+  
+	position: relative;
+	width: 30px;
+	height: 965px;
+	margin: 7px;
+  border-radius: 5px;;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+	background: rgba(255,255,255,0.1);
+  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(6px);
+  
+
+  
+	
+
+}
+
+.containercard .card .insidecard{
+  font-size: 12px;
+  transform: rotate(180deg);
+	padding: 20px;
+  text-align: left;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+	
+	
+}
+
+.containercard .card:hover{
+  width: 520px;
+  transform: rotateX(20deg);
+ z-index: 999999;
+ rotate: 1 1 2 10deg;
+ 
+
+}
+	
+.containercard .card:hover .insidecard{
+  font-size: 12px;
+  transform: translateY(0px);
+  opacity:1;
+  
+  
+
+}
+
+
+
+.container .card .insidecard .img{
+  tr
+  position: absolute;
+ top: -50px;
+ width: 30px;
+
+}
+
+.card{
+  
+}
+
+.circle {
+  height: 24px;
+  width: 24px;
+  background-color: black;
+  border-radius: 30px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+
+
+.button {
+  position: absolute;
+  width: 500px;
+  left:0;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.button a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: red;
+  border: solid 2px red;
+  z-index: 1;
+}
+
+.container:hover .button {
+  opacity: 1;
+}
+
+.buttoncontainer{
+  position: absolute;
+  left:1200px;
+  z-index: 40px;
+
+}
